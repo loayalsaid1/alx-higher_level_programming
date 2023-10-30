@@ -24,3 +24,6 @@ The first python Project 30/10/2023
 
 
 9-easter_egg.py -> with only 98 charachter string, print the zen of python
+
+
+10-check_cycle.c -> check for cycles in a linked list
