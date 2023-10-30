@@ -15,3 +15,6 @@ The first python Project 30/10/2023
 
 
  7-concat.py -> complte a code to pring a phrase with some rules(check the task)
+
+
+7-edges.py -> print slices  of a string; first 3, last 2, execlude first and last character.
