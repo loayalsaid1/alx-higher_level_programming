@@ -18,3 +18,6 @@ The first python Project 30/10/2023
 
 
 7-edges.py -> print slices  of a string; first 3, last 2, execlude first and last character.
+
+
+8-concat_edges.py -> extract words from a string without using string literals
