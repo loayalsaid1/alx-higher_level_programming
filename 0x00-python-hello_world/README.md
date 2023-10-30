@@ -27,3 +27,6 @@ The first python Project 30/10/2023
 
 
 10-check_cycle.c -> check for cycles in a linked list
+
+
+100-write.py -> print a string to stderr stream with sys module without using print. And give and exit code as well.
