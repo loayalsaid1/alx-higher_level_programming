@@ -30,3 +30,9 @@ The first python Project 30/10/2023
 
 
 100-write.py -> print a string to stderr stream with sys module without using print. And give and exit code as well.
+
+
+101-compile -> compile a python file in the same directory
+
+
+101-compile -> decipher a byte code
