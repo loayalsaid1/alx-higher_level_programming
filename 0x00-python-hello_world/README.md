@@ -12,3 +12,6 @@ The first python Project 30/10/2023
 
  4-print_float.py -> print a float without casting it, with 2 precision
 \n\n4-print_string.py ->  print 3 times a string stored in the variable str, followed by its first 9 characters.
+
+
+ 7-concat.py -> complte a code to pring a phrase with some rules(check the task)
