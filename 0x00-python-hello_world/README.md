@@ -8,3 +8,6 @@ The first python Project 30/10/2023
 
 
 3-print_number.py -> Print formatted string with a number without casting it into a string
+
+
+ 4-print_float.py -> print a float without casting it, with 2 precision
