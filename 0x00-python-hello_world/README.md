@@ -21,3 +21,6 @@ The first python Project 30/10/2023
 
 
 8-concat_edges.py -> extract words from a string without using string literals
+
+
+9-easter_egg.py -> with only 98 charachter string, print the zen of python
