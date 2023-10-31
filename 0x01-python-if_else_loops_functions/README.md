@@ -17,3 +17,6 @@ Second python project 0x01 --- 31-10-2023
 
 
 5-print_comb2.py -> print numbers from 0 to 99 in 2 digit format with some ristrictions
+
+
+6-print_comb3.py -> print all possible different combinations or 2 digits
