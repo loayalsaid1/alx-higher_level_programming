@@ -23,3 +23,6 @@ Second python project 0x01 --- 31-10-2023
 
 
 7-islower.py -> check if character is lowercase
+
+
+13-insert_number.c -> INTERVIEW QUESTION: insert a node in a sorted linked list
