@@ -5,3 +5,6 @@ Second python project 0x01 --- 31-10-2023
 
 
 1-last_digit.py -> excract the last digit of a signed number and determine it's stage from 5
+
+
+2-print_alphabet.py -> print the alphabit in one line with no new line, one loop, one print, no importing
