@@ -11,3 +11,6 @@ Second python project 0x01 --- 31-10-2023
 
 
 3-print_alphabt.py -> Same as last one, exept q and e
+
+
+4-print_hexa.py -> With the same approach, print deimal and hex values from 0 to 98
