@@ -20,3 +20,6 @@ Second python project 0x01 --- 31-10-2023
 
 
 6-print_comb3.py -> print all possible different combinations or 2 digits
+
+
+7-islower.py -> check if character is lowercase
