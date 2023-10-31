@@ -14,3 +14,6 @@ Second python project 0x01 --- 31-10-2023
 
 
 4-print_hexa.py -> With the same approach, print deimal and hex values from 0 to 98
+
+
+5-print_comb2.py -> print numbers from 0 to 99 in 2 digit format with some ristrictions
