@@ -29,3 +29,9 @@ Second python project 0x01 --- 31-10-2023
 
 
 100-print_tebahpla.py -> With on print and one loop, print ASCII alphabet in reverse order alternating lowercase and uppercase
+
+
+101-remove_char_at.py -> make a copy of a string, excluding a char at index n, the c array way, not the python way
+
+
+ magic calcluation -> decipher python bytecode code

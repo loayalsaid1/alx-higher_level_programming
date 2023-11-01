@@ -5,9 +5,8 @@ def detect_outrange_index(str, n):
 
 
 def remove_char_at(str, n):
-    length = len(str)
     if detect_outrange_index(str, n):
-        return (str)
+        return str
 
     new_cpy = ""
     index = 0
@@ -18,7 +17,7 @@ def remove_char_at(str, n):
         index = 1
     else:
         index += 2
-    for index in range(index, length):
+    for index in range(index, len(str)):
         new_cpy += str[index]
 
-    return (new_cpy)
+    return new_cpy
