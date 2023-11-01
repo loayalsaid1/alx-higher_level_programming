@@ -26,3 +26,6 @@ Second python project 0x01 --- 31-10-2023
 
 
 13-insert_number.c -> INTERVIEW QUESTION: insert a node in a sorted linked list
+
+
+100-print_tebahpla.py -> With on print and one loop, print ASCII alphabet in reverse order alternating lowercase and uppercase
