@@ -22,3 +22,9 @@
 
 
 100-my_calculator.py -> print the result or calculation givin in argv of the program. importing the functions from calculator1.py module
+
+
+101-easy_print.py -> print to stdout without any code in your file
+
+
+102-magic_calculation.py -> 3rd bytecode problem
