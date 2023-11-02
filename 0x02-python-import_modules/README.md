@@ -7,3 +7,6 @@
 
 
 1-calculation.py -> import multible functions and use them wsr
+
+
+2-args.py -> Print the count and the list of arguments with specific format
