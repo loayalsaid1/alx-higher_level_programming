@@ -13,3 +13,6 @@
 
 
 3-infinite_add.py -> print the sum of the argumets
+
+
+4-hidden_discovery.py -> 4-hidden_discovery.py print all the names in a compiled file line by line
