@@ -16,3 +16,6 @@
 
 
 4-hidden_discovery.py -> 4-hidden_discovery.py print all the names in a compiled file line by line
+
+
+5-variable_load.py -> print a varaible stored in another module
