@@ -19,3 +19,6 @@
 
 
 5-variable_load.py -> print a varaible stored in another module
+
+
+100-my_calculator.py -> print the result or calculation givin in argv of the program. importing the functions from calculator1.py module
