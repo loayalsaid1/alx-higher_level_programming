@@ -10,3 +10,6 @@
 
 
 2-args.py -> Print the count and the list of arguments with specific format
+
+
+3-infinite_add.py -> print the sum of the argumets
