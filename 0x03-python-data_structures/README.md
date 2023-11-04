@@ -30,3 +30,6 @@
 
 
 9-max_integer.py -> get the max number of a list ((without using max))
+
+
+11-delete_at.py -> delete an elment at idx
