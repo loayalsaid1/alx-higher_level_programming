@@ -9,3 +9,6 @@
 
 
 2-replace_in_list.py -> replace item on a list at specific index
+
+
+3-print_reversed_list_integer.py -> print int's in a list in reverse order
