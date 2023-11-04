@@ -18,3 +18,6 @@
 
 
 5-no_c.py -> remove all c and C characters from a string
+
+
+6-print_matrix_integer.py -> print a matrix
