@@ -21,3 +21,6 @@
 
 
 6-print_matrix_integer.py -> print a matrix
+
+
+7-add_tuple.py -> Add the first 2 elemnts of a tupple and replace them with 0 if the tuple is empty
