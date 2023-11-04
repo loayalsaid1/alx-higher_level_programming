@@ -12,3 +12,6 @@
 
 
 3-print_reversed_list_integer.py -> print int's in a list in reverse order
+
+
+4-new_in_list.py -> replace an element in a copy of a list
