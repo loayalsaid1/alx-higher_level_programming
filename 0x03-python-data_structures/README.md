@@ -24,3 +24,6 @@
 
 
 7-add_tuple.py -> Add the first 2 elemnts of a tupple and replace them with 0 if the tuple is empty
+
+
+8-multiple_returns.py -> take string and return a tuple with its length and first char if exists, otherwise, None
