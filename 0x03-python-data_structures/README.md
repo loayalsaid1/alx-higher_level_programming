@@ -15,3 +15,6 @@
 
 
 4-new_in_list.py -> replace an element in a copy of a list
+
+
+5-no_c.py -> remove all c and C characters from a string
