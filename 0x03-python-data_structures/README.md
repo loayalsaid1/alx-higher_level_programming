@@ -27,3 +27,6 @@
 
 
 8-multiple_returns.py -> take string and return a tuple with its length and first char if exists, otherwise, None
+
+
+9-max_integer.py -> get the max number of a list ((without using max))
