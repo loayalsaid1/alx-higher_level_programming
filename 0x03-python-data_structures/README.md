@@ -36,3 +36,6 @@
 
 
 12-switch.py -> swap 2 variables
+
+
+13-is_palindrome.c -> check for palindrome in a singly linked list the most effecient possible way
