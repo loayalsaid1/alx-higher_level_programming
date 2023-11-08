@@ -20,3 +20,6 @@
 
 
 6-print_sorted_dictionary.py -> print a dictionaries in a sorted order by keys
+
+
+7-update_dictionary.py -> update a dict with key and value, overwriting existing keys
