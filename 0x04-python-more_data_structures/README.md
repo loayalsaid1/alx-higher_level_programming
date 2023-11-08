@@ -8,3 +8,6 @@
 
 
 2-uniq_add.py -> add int's in a list to a varaible, only once
+
+
+3-common_elements.py -> return the intersection of 2 sets
