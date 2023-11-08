@@ -5,3 +5,6 @@
 
 
 1-search_replace.py -> replace an elemnt of a list witn another one
+
+
+2-uniq_add.py -> add int's in a list to a varaible, only once
