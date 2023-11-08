@@ -17,3 +17,6 @@
 
 
 5-number_keys.py -> return the number of elemnts in a dictionray OR KEYS ,,,, BOTH THE SAME WHEN IT COMES TO COUNT, ISN'T IT?
+
+
+6-print_sorted_dictionary.py -> print a dictionaries in a sorted order by keys
