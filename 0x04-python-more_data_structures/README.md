@@ -23,3 +23,6 @@
 
 
 7-update_dictionary.py -> update a dict with key and value, overwriting existing keys
+
+
+8-simple_delete.py -> delte a key from a dict if it exists and return the dict
