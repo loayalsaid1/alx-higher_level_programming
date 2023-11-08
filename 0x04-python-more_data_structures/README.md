@@ -14,3 +14,6 @@
 
 
 4-only_diff_elements.py -> return the symmetric difference of 2 sets
+
+
+5-number_keys.py -> return the number of elemnts in a dictionray OR KEYS ,,,, BOTH THE SAME WHEN IT COMES TO COUNT, ISN'T IT?
