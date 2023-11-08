@@ -26,3 +26,6 @@
 
 
 8-simple_delete.py -> delte a key from a dict if it exists and return the dict
+
+
+9-multiply_by_2.py -> return a duplicate of a dict, with values doupled
