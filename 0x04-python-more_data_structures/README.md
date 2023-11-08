@@ -32,3 +32,6 @@
 
 
 10-best_score.py -> Get the greatest value in a dict
+
+
+11-multiply_list_map.py -> use map fucntion to multibly list elements by a number
