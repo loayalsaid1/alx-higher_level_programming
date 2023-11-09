@@ -38,3 +38,6 @@
 
 
 12-roman_to_int.py -> transfer roman numbers to int
+
+
+100-weight_average.py -> get what is so called weight_average from tuples i a list
