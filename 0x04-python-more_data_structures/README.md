@@ -44,3 +44,6 @@
 
 
 101-square_matrix_map.py -> square  a matrix in one line with map with no loops
+
+
+102-complex_delete.py -> remove keys from a dict with specific values
