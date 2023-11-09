@@ -41,3 +41,6 @@
 
 
 100-weight_average.py -> get what is so called weight_average from tuples i a list
+
+
+101-square_matrix_map.py -> square  a matrix in one line with map with no loops
