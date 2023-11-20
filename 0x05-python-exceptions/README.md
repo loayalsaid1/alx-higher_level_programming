@@ -7,3 +7,6 @@
 
 
 3-safe_print_division.py -> print result of division and handle ZeroDivisionError
+
+
+4-list_division.py -> divede elements of 2 lists, take handle different exceptions
