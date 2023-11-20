@@ -16,3 +16,6 @@
 
 
 6-raise_exception_msg.py -> raise an exception wiht a message
+
+
+100-safe_print_integer_err.py -> print an int and print to stderr incase of handling exceptions
