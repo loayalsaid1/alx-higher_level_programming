@@ -4,3 +4,6 @@
 
 
 2-safe_print_list_integers.py -> print x number of integers in a list. only ints and if index is out of range exception will raise
+
+
+3-safe_print_division.py -> print result of division and handle ZeroDivisionError
