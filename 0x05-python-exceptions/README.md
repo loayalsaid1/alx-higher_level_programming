@@ -22,3 +22,6 @@
 
 
 101-safe_function.py -> execute a given function and handle exceptions
+
+
+102-magic_calculation.py -> one more bytecode challenge
