@@ -10,3 +10,6 @@
 
 
 4-list_division.py -> divede elements of 2 lists, take handle different exceptions
+
+
+5-raise_exception.py -> raise an exception
