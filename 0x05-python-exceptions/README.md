@@ -13,3 +13,6 @@
 
 
 5-raise_exception.py -> raise an exception
+
+
+6-raise_exception_msg.py -> raise an exception wiht a message
