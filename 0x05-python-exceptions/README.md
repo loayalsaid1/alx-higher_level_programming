@@ -19,3 +19,6 @@
 
 
 100-safe_print_integer_err.py -> print an int and print to stderr incase of handling exceptions
+
+
+101-safe_function.py -> execute a given function and handle exceptions
