@@ -8,3 +8,6 @@
 
 
 101-square.py -> based on 6-square.py, but when printing it, do the same as my_print function
+
+
+103-magic_class.py -> magic class bytecode 
