@@ -1,0 +1,70 @@
+Usint ``add_integer``
+---------------------
+
+Check for docs
+	>>> docs = __import__('0-add_integer').__doc__
+	>>> if not docs:
+	... 	print("No module docs")
+
+Import the function
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+Check for docs
+	>>> docs = add_integer.__doc__
+	>>> if not docs:
+	... 	print("No function docs")
+
+Regular usage
+	>>> add_integer(2, 3)
+	5
+
+With a negative number
+	>>> add_integer(-5, 5)
+	0
+
+2 negatives
+	>>> add_integer(-4, -4)
+	-8
+
+Zeros
+	>>> add_integer(0, 0)
+	0
+
+One argument
+	>>> add_integer(2)
+	100
+
+None
+	>>> add_integer(None)
+	Traceback (innermost last):
+	TypeError: a must be an integer
+
+Wronge type:
+	>>> add_integer("2", 2)
+	Traceback (innermost last):
+	TypeError: a must be an integer
+
+	>>> add_integer("2", "2")
+	Traceback (innermost last):
+	TypeError: a must be an integer
+
+	>>> add_integer(2, "2")
+	Traceback (innermost last):
+	TypeError: b must be an integer
+
+Floats:
+	
+	>>> add_integer(2.5)
+	100
+	>>> add_integer(2.5, 2.5)
+	4
+	>>> add_integer(3, 2.5)
+	5
+
+	Negatives
+	>>> add_integer(-2.5)
+	96
+	>>> add_integer(-2.5, -2.5)
+	-4
+	>>> add_integer(-3, -2.5)
+	-5
