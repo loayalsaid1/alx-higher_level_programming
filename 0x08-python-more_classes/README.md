@@ -19,3 +19,6 @@
 
 
 6-rectangle.py -> Add a class attribute number_of_instances. based on 5-rectangle.py
+
+
+7-rectangle.py -> modify the class so it represent the objct with any string verstion of anytype. based on 6-rectangle.py
