@@ -16,3 +16,6 @@
 
 
 5-rectangle.py -> add __del__ functionlality, print a bye message. based on 4-rectangle.py
+
+
+6-rectangle.py -> Add a class attribute number_of_instances. based on 5-rectangle.py
