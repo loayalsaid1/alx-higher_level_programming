@@ -7,3 +7,6 @@
 
 
 2-rectangle.py -> Add the prerimiter and area methods as well based on 1-rectangle.py 
+
+
+3-rectangle.py -> Add a __str__ functionality to the class, based on 2-rectangle.py
