@@ -23,3 +23,6 @@
 
 7-rectangle.py -> modify the class so it represent the objct with any string verstion of anytype. based on 6-rectangle.py
 8-rectangle.py -> Add bigger_or_equal static method. based on 7-rectangle.py
+
+
+9-rectangle.py -> based on 8-rectangle.py, add a classmethod to create an object wiht equal widht and height, aka square
