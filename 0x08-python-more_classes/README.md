@@ -10,3 +10,6 @@
 
 
 3-rectangle.py -> Add a __str__ functionality to the class, based on 2-rectangle.py
+
+
+4-rectangle.py -> Add the developer representation of a rectangle object (repr functionality). based on 3-rectangle.py
