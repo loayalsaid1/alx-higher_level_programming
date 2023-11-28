@@ -1,0 +1,48 @@
+Using ``say_my_name`` from ``3-say_my_name.py``
+-----------------------------------------------
+
+Get the function: 
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+
+Check for docs in module
+    >>> docs = __import__('3-say_my_name').__doc__
+    >>> if docs:
+    ...     print("True")
+    True
+
+
+Check for docs of the function
+    >>> docs = say_my_name.__doc__
+    >>> if docs:
+    ...     print("True")
+    True
+
+
+Check for wronge inputs:
+    >>> say_my_name(3, 4)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name(3, "Loay")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name("Loay", 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+
+Check for valid inputs:
+    >>> say_my_name("Loay")
+    My name is Loay
+
+    >>> say_my_name("Loay", "Al-Said")
+    My name is Loay Al-Said
+
+No input
+    >>> say_my_name("")
+    My name is
