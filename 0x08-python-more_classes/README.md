@@ -13,3 +13,6 @@
 
 
 4-rectangle.py -> Add the developer representation of a rectangle object (repr functionality). based on 3-rectangle.py
+
+
+5-rectangle.py -> add __del__ functionlality, print a bye message. based on 4-rectangle.py
