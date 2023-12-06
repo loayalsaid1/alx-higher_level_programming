@@ -42,3 +42,7 @@ Check for valid inputs:
 
     >>> say_my_name("Loay", "Al-Said")
     My name is Loay Al-Said
+
+No input
+    >>> say_my_name("")
+    My name is
