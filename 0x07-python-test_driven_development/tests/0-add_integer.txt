@@ -68,3 +68,15 @@ Floats:
 	-4
 	>>> add_integer(-3, -2.5)
 	-5
+
+	Overflow
+	>>> add_integer(1, float('inf'))
+	Traceback (innermost last):
+	...
+	OverflowError: cannot convert float infinity to integer
+	
+	Float NaN:
+	>>> add_integer(2, float('NaN'))
+	Traceback (innermost last):
+	...
+	ValueError: cannot convert float NaN to integer
