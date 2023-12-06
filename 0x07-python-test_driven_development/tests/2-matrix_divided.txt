@@ -34,7 +34,15 @@ Zero division
     >>> matrix_divided(matrix, 0)
     Traceback (most recent call last):
     ZeroDivisionError: division by zero
-    
+
+Non-Number
+    >>> matrix = [[1, 2], [3, 4]]
+    >>> matrix_divided(matrix, "3")
+    Traceback (most recent call last):
+    ...
+    TypeError: div must be a number
+
+
 
 Check for docs in module
     >>> docs = __import__("2-matrix_divided").__doc__
