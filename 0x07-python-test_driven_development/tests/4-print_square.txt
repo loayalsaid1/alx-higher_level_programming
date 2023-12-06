@@ -34,6 +34,12 @@ Check for wronge inputs:
     ...
     ValueError: size must be >= 0
 
+Checking for no args:
+	 >>> print_square()
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: print_square() missing 1 required positional argument: 'size'
+
 Check for valid inputs:
     >>> print_square(0)
 
