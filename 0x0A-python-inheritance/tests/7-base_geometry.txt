@@ -1,0 +1,65 @@
+USING ``7-base_geometry.txt``
+=============================
+
+CHECK FOR NAMES AND GET THEM:
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+    >>> area = BaseGeometry.area
+    >>> integer_validator = BaseGeometry.integer_validator
+    >>> obj = BaseGeometry()
+
+CHECK FOR DOCS:
+    >>> __import__('7-base_geometry').__doc__ != None
+    True
+
+    >>> BaseGeometry.__doc__ != None
+    True
+    >>> area.__doc__ != None
+    True
+    >>> integer_validator.__doc__ != None
+    True
+
+CHECK FOR ERRORS:
+    >>> obj.integer_validator("x")
+    Traceback (innermost last):
+    ...
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
+    >>> obj.integer_validator()
+    Traceback (innermost last):
+    ...
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+CHECK FOR EXPECTED VALUES:
+    >>> obj.area()
+    Traceback (innermost last):
+    ...
+    Exception: area() is not implemented
+
+    >>> obj.integer_validator("x", True)
+    Traceback (innermost last):
+    ...
+    TypeError: x must be an integer
+
+    >>> obj.integer_validator("x", {"ABC": "abc"})
+    Traceback (innermost last):
+    ...
+    TypeError: x must be an integer
+
+    >>> obj.integer_validator("x", None)
+    Traceback (innermost last):
+    ...
+    TypeError: x must be an integer
+
+    >>> obj.integer_validator("x", 0)
+    Traceback (innermost last):
+    ...
+    ValueError: x must be greater than 0
+
+    >>> obj.integer_validator("x", -5)
+    Traceback (innermost last):
+    ...
+    ValueError: x must be greater than 0
+
+CHECK EXPCETED SUCCESS:
+    >>> obj.integer_validator("x", 4)
+
+    >>> obj.integer_validator("x", 90)
