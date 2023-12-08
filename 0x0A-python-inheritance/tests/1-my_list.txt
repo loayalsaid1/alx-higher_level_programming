@@ -1,0 +1,41 @@
+TEST ``1-my_list.py``
+==============
+
+GET THE FUNC AND CHECK FOR DOCS:
+    >>> MyList = __import__('1-my_list').MyList
+
+    >>> docs  = __import__("1-my_list").MyList.__doc__
+    >>> docs != None
+    True
+
+    >>> __import__("1-my_list").__doc__ != None
+    True
+
+    >>> __import__("1-my_list").MyList.print_sorted.__doc__ != None
+    True
+
+
+CHECK FOR CLASS EXISTENCE AND (LIST) CLASS INHERITENCE:
+    >>> x = MyList()
+
+    >>> issubclass(MyList, list)
+    True
+
+
+CHECK IF FUNCTION IS THERE AND PART OF MyList:
+    >>> 'print_sorted' in dir(MyList)
+    True
+
+CHEKCK FOR GOOD INPUT:
+    >>> x = MyList()
+    >>> x.extend([5, 4, 3, 2, 1, 0])
+    >>> print(x)
+    [5, 4, 3, 2, 1, 0]
+    >>> x.print_sorted()
+    [0, 1, 2, 3, 4, 5]
+
+    NEGATIVES INCLUDED:
+    >>> x.extend([-1, -100, -4, -9, -10])
+    >>> x.print_sorted()
+    [-100, -10, -9, -4, -1, 0, 1, 2, 3, 4, 5]
+    
