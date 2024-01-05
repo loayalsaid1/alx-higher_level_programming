@@ -1,43 +1,42 @@
-The ``101-lazy_matrix_mul`` module
+The ``100-matrix_mul`` module
 =============================
 
-Using ``lazy_matrix_mul``
+Using ``matrix_mul``
 --------------------
 
 open module
-	>>> lazy_matrix_mul = __import__("101-lazy_matrix_mul").lazy_matrix_mul
+    >>> matrix_mul = __import__('100-matrix_mul').matrix_mul
 
 Documentation:
-    >>> len(__import__("101-lazy_matrix_mul").__doc__) > 1
+    >>> len(__import__('100-matrix_mul').__doc__) > 1
     True
-    >>> len(__import__("101-lazy_matrix_mul").lazy_matrix_mul.__doc__) > 1
+    >>> len(__import__('100-matrix_mul').matrix_mul.__doc__) > 1
     True
 
 
 Check for normal case
-    >>> lazy_matrix_mul([[3, 2, 1, 5], [9, 1, 3, 0]], [[2, 9, 0], [1, 3, 5], [2, 4, 7], [8, 1, 5]])
-    array([[50, 42, 42],
-           [25, 96, 26]])
+    >>> matrix_mul([[3, 2, 1, 5], [9, 1, 3, 0]], [[2, 9, 0], [1, 3, 5], [2, 4, 7], [8, 1, 5]])
+    [[50, 42, 42], [25, 96, 26]]
 
 Check m_a or m_b not lists?
-    >>> lazy_matrix_mul("Matrix", [[1, 2], [3, 4]])
+    >>> matrix_mul("Matrix", [[1, 2], [3, 4]])
     Traceback (most recent call last):
     ...
     TypeError: m_a must be a list
 
-    >>> lazy_matrix_mul([[1, 2], [3, 4]], "Matix")
+    >>> matrix_mul([[1, 2], [3, 4]], "Matix")
     Traceback (most recent call last):
     ...
     TypeError: m_b must be a list
 
 
 Both are lists of lists?
-    >>> lazy_matrix_mul([[1, 2], 3], [[1, 2, 3], [1, 2, 3]])
+    >>> matrix_mul([[1, 2], 3], [[1, 2, 3], [1, 2, 3]])
     Traceback (most recent call last):
     TypeError: m_a must be a list of lists
 
 
-    >>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2, 3], 4])
+    >>> matrix_mul([[1, 2], [3, 4]], [[1, 2, 3], 4])
     Traceback (most recent call last):
     TypeError: m_b must be a list of lists
 
@@ -45,47 +44,48 @@ Both are lists of lists?
 
 Both are not emplty?
 
-    >>> lazy_matrix_mul([], [[1, 2], [3, 4]])
+    >>> matrix_mul([], [[1, 2], [3, 4]])
     Traceback (most recent call last):
     ValueError: m_a can't be empty
 
-    >>> lazy_matrix_mul([[]], [[1, 2], [3, 4]])
+    >>> matrix_mul([[]], [[1, 2], [3, 4]])
     Traceback (most recent call last):
     ValueError: m_a can't be empty
 
-    >>> lazy_matrix_mul([[1, 2], [3, 4]], [])
+    >>> matrix_mul([[1, 2], [3, 4]], [])
     Traceback (most recent call last):
     ValueError: m_b can't be empty
 
-    >>> lazy_matrix_mul([[1, 2], [3, 4]], [[]])
+    >>> matrix_mul([[1, 2], [3, 4]], [[]])
     Traceback (most recent call last):
     ValueError: m_b can't be empty
 
 Correct data types?
-    >>> lazy_matrix_mul([[1, "2"], [3, 4]], [[1, 2], [3, 4]])
+    >>> matrix_mul([[1, "2"], [3, 4]], [[1, 2], [3, 4]])
     Traceback (most recent call last):
     TypeError: m_a should contain only integers or floats
 
-    >>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], ["3", 4]])
+    >>> matrix_mul([[1, 2], [3, 4]], [[1, 2], ["3", 4]])
     Traceback (most recent call last):
     TypeError: m_b should contain only integers or floats
 
 
 Both have same size rows?
-    >>> lazy_matrix_mul([[1, 2], [3, 4, 5]], [[1, 2], [3, 4]])
+    >>> matrix_mul([[1, 2], [3, 4, 5]], [[1, 2], [3, 4]])
     Traceback (most recent call last):
     TypeError: each row of m_a must be of the same size
 
-    >>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4, 5]])
+    >>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4, 5]])
     Traceback (most recent call last):
     TypeError: each row of m_b must be of the same size
 
 
 Wrong number of rows and columns?
-    >>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+    >>> matrix_mul([[1, 2], [3, 4]], [[1, 2, 3], [4, 5, 6], [7, 8, 9]])
     Traceback (most recent call last):
     ValueError: m_a and m_b can't be multiplied
 
-    >>> lazy_matrix_mul([[1, 2, 3], [4, 5, 6], [7, 8, 9]], [[1, 2], [3, 4]])
+    >>> matrix_mul([[1, 2, 3], [4, 5, 6], [7, 8, 9]], [[1, 2], [3, 4]])
     Traceback (most recent call last):
     ValueError: m_a and m_b can't be multiplied
+
