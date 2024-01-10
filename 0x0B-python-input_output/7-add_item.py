@@ -36,10 +36,11 @@ def load_from_json_file(filename):
 
 
 file_name = "add_item.json"
-objects_list = [argv[index] for index in range(1, len(argv))]
+objects_list = []
 
 if exists(file_name):
     old_objects = load_from_json_file(file_name)
     objects_list += old_objects
 
+objects_list += [argv[i] for i in range(1, len(argv))]
 save_to_json_file(objects_list, file_name)
