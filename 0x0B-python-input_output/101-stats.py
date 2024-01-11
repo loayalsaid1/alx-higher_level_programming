@@ -2,7 +2,6 @@
 import sys
 
 
-
 def print_data():
     print(f"File size: {total_size}")
     for code in codes:
@@ -19,13 +18,16 @@ for code in codes:
 try:
     line_num = 1
     for line in sys.stdin:
-        if line_num == 11:
-            line_num = 1
-            print_data()
-        info = line.split()
-        total_size += int(info[-1])
-        codes_counts[info[-2]] += 1
-        line_num += 1
+        try:
+            if line_num == 11:
+                line_num = 1
+                print_data()
+            info = line.split()
+            total_size += int(info[-1])
+            codes_counts[info[-2]] += 1
+            line_num += 1
+        except Exception:
+            pass
     else:
         print_data()
 except KeyboardInterrupt as e:
