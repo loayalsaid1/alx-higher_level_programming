@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Mudule 100-matrix_mul
     Marecies multiplication
 """
@@ -20,12 +21,12 @@ def is_list_of_lists(mat, name):
 def is_empty(mat, name):
     """Check whether a matrix is empty
     """
-    if not len(mat) > 0 :
+    if not len(mat) > 0:
         raise ValueError(f"{name} can't be empty")
     for row in mat:
-        if not len(row) > 0 :
+        if not len(row) > 0:
             raise ValueError(f"{name} can't be empty")
-    
+
 
 def validate_elements(mat, name):
     """check if all elements of a matrix are of the correct type
@@ -35,8 +36,10 @@ def validate_elements(mat, name):
     for row in mat:
         for element in row:
             if not isinstance(element, int) and\
-                not isinstance(element, float):
+                    not isinstance(element, float):
                 raise TypeError(message)
+
+
 def is_rectangle_matrix(mat, name):
     """Check of all rows of a matrix are the same size
     """
