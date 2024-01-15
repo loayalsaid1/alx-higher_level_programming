@@ -9,59 +9,92 @@ class Rectangle(Base):
     def __init__(self, width, length, x=0, y=0, id=None):
         """Rectangle initializer"""
         super().__init__(id)
-        self.__width = width
-        self.__length = length
-        self.__x = x
-        self.__y = y
-    
+        self.__width = Rectangle.check_attribute("width", width)
+        self.__length = Rectangle.check_attribute("length", length)
+        self.__x = Rectangle.check_attribute("x", x)
+        self.__y = Rectangle.check_attribute("y", y)
+
     @property
     def width(self):
         """Width getter"""
         return self.__width
-    
+
     @width.setter
     def width(self, value):
         """Width setter"""
-        if type(value) is not int and type(value) is not float:
-            raise TypeError("Width must be int or float.")
-        if value < 0:
-            raise ValueError("Width must be positive numebr.")
-        self.__width = value
+        self.__width = Rectangle.check_attribute("width", value)
 
     @property
     def length(self):
         """Length getter"""
         return self.__length
-    
+
     @length.setter
     def length(self, value):
         """Length setter"""
-        if type(value) is not int and type(value) is not float:
-            raise TypeError("Length must be int or float.")
-        if value < 0:
-            raise ValueError("Length must be positive numebr.")
-        self.__length = value
+        self.__length = Rectangle.check_attribute("length", value)
 
     @property
     def x(self):
         """X getter"""
         return self.__x
-    
+
     @x.setter
     def x(self, value):
         """X setter"""
-        if type(value) not in (int, float):
-            raise TypeError("X must be int or float.")
-        self.__x = value
-
+        self.__x = Rectangle.check_attribute("x", value)
     @property
     def y(self):
         """Y getter"""
         return self.__y
-    
+
     @y.setter
     def y(self, value):
         """Y setter"""
-        if type(value) not in (int, float):
-            raise TypeError("Y must be int or float.")
-        self.__y = value
+        self.__y = Rectangle.check_attribute("y", value)
+
+    @staticmethod
+    def check_attribute(name, value):
+        """Check if the value or the attirbute is valid.
+            Otherwise, raise the correct Exception.
+            Args:
+                value: The object to be validated.
+                name: the name of tha attirbute, used in exception message.
+
+            Returns: The value back if it's valid.
+        """
+        def validate_type():
+            """Validate if <value> is an int.
+
+                Args:
+                    value: The object to be validated.
+                    name: the name of tha attirbute, used in exception message.
+            """
+            nonlocal name
+            nonlocal value
+
+            if type(value) is not int:
+                raise TypeError(f"{name} must be an integer")
+
+        def validate_value():
+            """Validate if <value> is > 0 or >= 0 if name is x or y
+                Based on the name.
+
+                Args:
+                    value: The object to be validated.
+                    name: the name of tha attirbute, used in exception message.
+            """
+            nonlocal name
+            nonlocal value
+
+            if name in ["width", "length"] and value < 1:
+                raise ValueError(f"{name} must be > 0")
+            elif name in ["x", "y"] and value < 0:
+                raise ValueError(f"{name} must be >= 0")
+
+        validate_type()
+        validate_value()
+
+        return value
+
+
