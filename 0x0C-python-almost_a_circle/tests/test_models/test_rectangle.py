@@ -4,7 +4,9 @@
 
 import unittest
 from models.base import Base
-from  models.rectangle import Rectangle
+from models.rectangle import Rectangle
+from unittest.mock import patch
+
 
 class Test_Rectangle(unittest.TestCase):
     """test Rectanlge class from rectangle module"""
@@ -21,7 +23,7 @@ class Test_Rectangle(unittest.TestCase):
 
     def test_normal_case(self):
         r1 = Rectangle(2, 3)
-        r2 = Rectangle(2 , 5, 10, 20, 4)
+        r2 = Rectangle(2, 5, 10, 20, 4)
 
         self.assertEqual(r1.id, 1)
         self.assertEqual(r1.width, 2)
@@ -39,13 +41,13 @@ class Test_Rectangle(unittest.TestCase):
         message = "{} must be an integer"
 
         with self.assertRaises(TypeError, msg=message.format("width")):
-                Rectangle("not int", 1, 1, 1)
+            Rectangle("not int", 1, 1, 1)
         with self.assertRaises(TypeError, msg=message.format("length")):
-                Rectangle(1, "not int", 1, 1)
+            Rectangle(1, "not int", 1, 1)
         with self.assertRaises(TypeError, msg=message.format("x")):
-                Rectangle(1, 1, "not int", 1)
+            Rectangle(1, 1, "not int", 1)
         with self.assertRaises(TypeError, msg=message.format("y")):
-                Rectangle(1, 1, 1, "not int")
+            Rectangle(1, 1, 1, "not int")
 
     def test_setters_attrs_type_errors(self):
         r1 = Rectangle(1, 1)
@@ -65,13 +67,13 @@ class Test_Rectangle(unittest.TestCase):
 
         # In inintualization
         with self.assertRaises(ValueError, msg=message.format("width", ">")):
-                Rectangle(-1, 1, 1, 1)
+            Rectangle(-1, 1, 1, 1)
         with self.assertRaises(ValueError, msg=message.format("length", ">")):
-                Rectangle(1, -1, 1, 1)
+            Rectangle(1, -1, 1, 1)
         with self.assertRaises(ValueError, msg=message.format("x", ">=")):
-                Rectangle(1, 1, -1, 1)
+            Rectangle(1, 1, -1, 1)
         with self.assertRaises(ValueError, msg=message.format("y", ">=")):
-                Rectangle(1, 1, 1, -1)
+            Rectangle(1, 1, 1, -1)
 
     def test_setters_values_errors(self):
         message = "{} must be {} 0"
@@ -85,7 +87,6 @@ class Test_Rectangle(unittest.TestCase):
         with self.assertRaises(ValueError, msg=message.format("y", ">=")):
             r1.y = -1
 
-
     def test_private_attrs(self):
         with self.assertRaises(AttributeError):
             Rectangle(4, 5).__width
@@ -96,7 +97,20 @@ class Test_Rectangle(unittest.TestCase):
         with self.assertRaises(AttributeError):
             Rectangle(4, 5).__y
 
-
     def test_area(self):
         self.assertEqual(Rectangle(1, 1).area(), 1)
         self.assertEqual(Rectangle(4, 5).area(), 20)
+
+    def test_display(self):
+        with patch('builtins.print') as mock_print:
+            Rectangle(1, 1).display()
+
+            output = mock_print.mock_calls[0][1][0]
+            self.assertEqual(output, '#')
+
+        with patch('builtins.print') as mock_print:
+            Rectangle(2, 3).display()
+
+            for i in range(3):
+                output = mock_print.mock_calls[i][1][0]
+                self.assertEqual(output, '##')

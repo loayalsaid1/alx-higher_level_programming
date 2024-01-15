@@ -43,6 +43,7 @@ class Rectangle(Base):
     def x(self, value):
         """X setter"""
         self.__x = Rectangle.check_attribute("x", value)
+
     @property
     def y(self):
         """Y getter"""
@@ -56,6 +57,11 @@ class Rectangle(Base):
     def area(self):
         """Calculate the area or a rectangle"""
         return self.width * self.length
+
+    def display(self):
+        """Print the rectangle"""
+        for x in range(self.length):
+            print('#'*self.width)
 
     @staticmethod
     def check_attribute(name, value):
