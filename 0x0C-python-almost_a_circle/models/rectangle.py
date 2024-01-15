@@ -22,7 +22,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """Width setter"""
-        if type(value) is not float and type(value) is not float:
+        if type(value) is not int and type(value) is not float:
             raise TypeError("Width must be int or float.")
         if value < 0:
             raise ValueError("Width must be positive numebr.")
@@ -36,7 +36,7 @@ class Rectangle(Base):
     @length.setter
     def length(self, value):
         """Length setter"""
-        if type(value) is not float and type(value) is not float:
+        if type(value) is not int and type(value) is not float:
             raise TypeError("Length must be int or float.")
         if value < 0:
             raise ValueError("Length must be positive numebr.")
