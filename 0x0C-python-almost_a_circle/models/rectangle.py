@@ -53,6 +53,10 @@ class Rectangle(Base):
         """Y setter"""
         self.__y = Rectangle.check_attribute("y", value)
 
+    def area(self):
+        """Calculate the area or a rectangle"""
+        return self.width * self.length
+
     @staticmethod
     def check_attribute(name, value):
         """Check if the value or the attirbute is valid.
@@ -96,5 +100,3 @@ class Rectangle(Base):
         validate_value()
 
         return value
-
-

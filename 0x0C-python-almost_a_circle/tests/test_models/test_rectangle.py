@@ -97,4 +97,6 @@ class Test_Rectangle(unittest.TestCase):
             Rectangle(4, 5).__y
 
 
-    def 
+    def test_area(self):
+        self.assertEqual(Rectangle(1, 1).area(), 1)
+        self.assertEqual(Rectangle(4, 5).area(), 20)
