@@ -63,6 +63,10 @@ class Rectangle(Base):
         for x in range(self.length):
             print('#'*self.width)
 
+    def __str__(self):
+        form = "[Rectangle] ({}) {}/{} - {}/{}"
+        return form.format(self.id, self.x, self.y, self.width, self.length)
+
     @staticmethod
     def check_attribute(name, value):
         """Check if the value or the attirbute is valid.

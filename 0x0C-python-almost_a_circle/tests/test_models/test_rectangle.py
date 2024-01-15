@@ -114,3 +114,11 @@ class Test_Rectangle(unittest.TestCase):
             for i in range(3):
                 output = mock_print.mock_calls[i][1][0]
                 self.assertEqual(output, '##')
+
+    def test_str(self):
+        """Test the output of __str__"""
+        r1 = Rectangle(4, 6, 2, 1, 12)
+        self.assertEqual(r1.__str__(), "[Rectangle] (12) 2/1 - 4/6")
+
+        r2 = Rectangle(5, 5, 1)
+        self.assertEqual(r2.__str__(), "[Rectangle] (1) 1/0 - 5/5")
