@@ -187,8 +187,19 @@ class Test_Rectangle(unittest.TestCase):
                 output = mock_print.mock_calls[i][1][0]
                 self.assertEqual(output, (0*' ')+'##')
 
-
-    def test_A_class(self):
-        '''Tests Rectangle class type.'''
-        self.assertEqual(str(Rectangle),
-                        "<class 'models.rectangle.Rectangle'>")
+    def test_update(self):
+        """Update test"""
+        r1 = Rectangle(10, 10, 10, 10)
+        self.assertEqual(str(r1), "[Rectangle] (1) 10/10 - 10/10")
+        r1.update()
+        self.assertEqual(str(r1), "[Rectangle] (1) 10/10 - 10/10")
+        r1.update(89)
+        self.assertEqual(str(r1), "[Rectangle] (89) 10/10 - 10/10")
+        r1.update(89, 2)
+        self.assertEqual(str(r1), "[Rectangle] (89) 10/10 - 2/10")
+        r1.update(89, 2, 3)
+        self.assertEqual(str(r1), "[Rectangle] (89) 10/10 - 2/3")
+        r1.update(89, 2, 3, 4)
+        self.assertEqual(str(r1), "[Rectangle] (89) 4/10 - 2/3")
+        r1.update(89, 2, 3, 4, 5)
+        self.assertEqual(str(r1), "[Rectangle] (89) 4/5 - 2/3")

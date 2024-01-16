@@ -65,6 +65,23 @@ class Rectangle(Base):
         for x in range(self.length):
             print((self.x*' ')+'#'*self.width)
 
+    def update(self, *args):
+        """Update objet attributes as folows
+            1st: id
+            2nd: width
+            3rd: length
+            4th: x
+            5th: y
+        """
+        try:
+            self.id = args[0]
+            self.width = args[1]
+            self.length = args[2]
+            self.x = args[3]
+            self.y = args[4]
+        except IndexError:
+            pass
+
     def __str__(self):
         """The str() output"""
         form = "[Rectangle] ({}) {}/{} - {}/{}"
