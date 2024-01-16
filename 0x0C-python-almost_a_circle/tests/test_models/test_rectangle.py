@@ -30,13 +30,13 @@ class Test_Rectangle(unittest.TestCase):
 
         self.assertEqual(r1.id, 1)
         self.assertEqual(r1.width, 2)
-        self.assertEqual(r1.length, 3)
+        self.assertEqual(r1.height, 3)
         self.assertEqual(r1.x, 0)
         self.assertEqual(r1.y, 0)
 
         self.assertEqual(r2.id, 4)
         self.assertEqual(r2.width, 2)
-        self.assertEqual(r2.length, 5)
+        self.assertEqual(r2.height, 5)
         self.assertEqual(r2.x, 10)
         self.assertEqual(r2.y, 20)
 
@@ -46,7 +46,7 @@ class Test_Rectangle(unittest.TestCase):
 
         with self.assertRaises(TypeError, msg=message.format("width")):
             Rectangle("not int", 1, 1, 1)
-        with self.assertRaises(TypeError, msg=message.format("length")):
+        with self.assertRaises(TypeError, msg=message.format("height")):
             Rectangle(1, "not int", 1, 1)
         with self.assertRaises(TypeError, msg=message.format("x")):
             Rectangle(1, 1, "not int", 1)
@@ -60,8 +60,8 @@ class Test_Rectangle(unittest.TestCase):
 
         with self.assertRaises(TypeError, msg=message.format("width")):
             r1.width = "not int"
-        with self.assertRaises(TypeError, msg=message.format("length")):
-            r1.length = "not int"
+        with self.assertRaises(TypeError, msg=message.format("height")):
+            r1.height = "not int"
         with self.assertRaises(TypeError, msg=message.format("x")):
             r1.x = "not int"
         with self.assertRaises(TypeError, msg=message.format("y")):
@@ -74,7 +74,7 @@ class Test_Rectangle(unittest.TestCase):
         # In inintualization
         with self.assertRaises(ValueError, msg=message.format("width", ">")):
             Rectangle(-1, 1, 1, 1)
-        with self.assertRaises(ValueError, msg=message.format("length", ">")):
+        with self.assertRaises(ValueError, msg=message.format("height", ">")):
             Rectangle(1, -1, 1, 1)
         with self.assertRaises(ValueError, msg=message.format("x", ">=")):
             Rectangle(1, 1, -1, 1)
@@ -87,8 +87,8 @@ class Test_Rectangle(unittest.TestCase):
         r1 = Rectangle(1, 1)
         with self.assertRaises(ValueError, msg=message.format("width", ">")):
             r1.width = 0
-        with self.assertRaises(ValueError, msg=message.format("length", ">")):
-            r1.length = 0
+        with self.assertRaises(ValueError, msg=message.format("height", ">")):
+            r1.height = 0
         with self.assertRaises(ValueError, msg=message.format("x", ">=")):
             r1.x = -1
         with self.assertRaises(ValueError, msg=message.format("y", ">=")):
@@ -99,7 +99,7 @@ class Test_Rectangle(unittest.TestCase):
         with self.assertRaises(AttributeError):
             Rectangle(4, 5).__width
         with self.assertRaises(AttributeError):
-            Rectangle(4, 5).__lenght
+            Rectangle(4, 5).__height
         with self.assertRaises(AttributeError):
             Rectangle(4, 5).__x
         with self.assertRaises(AttributeError):
@@ -137,7 +137,7 @@ class Test_Rectangle(unittest.TestCase):
         with self.assertRaises(TypeError) as e:
             r = Rectangle()
         s = "Rectangle.__init__() missing 2 required"\
-            " positional arguments: 'width' and 'length'"
+            " positional arguments: 'width' and 'height'"
         self.assertEqual(str(e.exception), s)
 
     def test_constructor_many_args(self):
@@ -153,7 +153,7 @@ class Test_Rectangle(unittest.TestCase):
         with self.assertRaises(TypeError) as e:
             r = Rectangle(1)
         s = "Rectangle.__init__() missing 1 required "\
-            "positional argument: 'length'"
+            "positional argument: 'height'"
         self.assertEqual(str(e.exception), s)
 
     def test_display_with_x_and_y(self):
@@ -203,3 +203,22 @@ class Test_Rectangle(unittest.TestCase):
         self.assertEqual(str(r1), "[Rectangle] (89) 4/10 - 2/3")
         r1.update(89, 2, 3, 4, 5)
         self.assertEqual(str(r1), "[Rectangle] (89) 4/5 - 2/3")
+
+    def test_update_kwargs(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        self.assertEqual(str(r1), "[Rectangle] (1) 10/10 - 10/10")
+        r1.update(id=3)
+        self.assertEqual(str(r1), "[Rectangle] (3) 10/10 - 10/10")
+        r1.update(89, id=4)
+        self.assertEqual(str(r1), "[Rectangle] (89) 10/10 - 10/10")
+        r1.update()
+        self.assertEqual(str(r1), "[Rectangle] (89) 10/10 - 10/10")
+        r1.update(id=50, width=2, height=3, x=4, y=5)
+        self.assertEqual(str(r1), "[Rectangle] (50) 4/5 - 2/3")
+        r1.update(y=10, x=20, id=90, width=7, height=9)
+        self.assertEqual(str(r1), "[Rectangle] (90) 20/10 - 7/9")
+
+    # def test_worng_kwargs(self):
+    #     r1 = Rectangle(10, 10, 10, 10)
+    #     with self.assertRaises(NameError):
+    #         r1.update(id=4, z=32)

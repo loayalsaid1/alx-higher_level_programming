@@ -4,14 +4,13 @@
 
 from models.base import Base
 
-
 class Rectangle(Base):
     """Rectangle class"""
-    def __init__(self, width, length, x=0, y=0, id=None):
+    def __init__(self, width, height, x=0, y=0, id=None):
         """Rectangle initializer"""
         super().__init__(id)
         self.__width = Rectangle.check_attribute("width", width)
-        self.__length = Rectangle.check_attribute("length", length)
+        self.__height = Rectangle.check_attribute("height", height)
         self.__x = Rectangle.check_attribute("x", x)
         self.__y = Rectangle.check_attribute("y", y)
 
@@ -26,14 +25,14 @@ class Rectangle(Base):
         self.__width = Rectangle.check_attribute("width", value)
 
     @property
-    def length(self):
-        """Length getter"""
-        return self.__length
+    def height(self):
+        """height getter"""
+        return self.__height
 
-    @length.setter
-    def length(self, value):
-        """Length setter"""
-        self.__length = Rectangle.check_attribute("length", value)
+    @height.setter
+    def height(self, value):
+        """height setter"""
+        self.__height = Rectangle.check_attribute("height", value)
 
     @property
     def x(self):
@@ -57,26 +56,42 @@ class Rectangle(Base):
 
     def area(self):
         """Calculate the area or a rectangle"""
-        return self.width * self.length
+        return self.width * self.height
 
     def display(self):
         """Print the rectangle"""
         print(self.y*'\n', end='')
-        for x in range(self.length):
+        for x in range(self.height):
             print((self.x*' ')+'#'*self.width)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Update objet attributes as folows
             1st: id
             2nd: width
-            3rd: length
+            3rd: height
             4th: x
             5th: y
         """
+        if not args or not (len(args)):
+            if not kwargs or not len(kwargs):
+                return
+            keys = ["id", "width", "height", "x", "y"]
+            # for key in kwargs.keys():
+            #     if key not in keys:
+            #         raise NameError
+            for key in keys:
+                try:
+                    setattr(self,
+                            key, Rectangle.check_attribute(key, kwargs[key]))
+                except KeyError:
+                    pass
+
+            return
+
         try:
             self.id = args[0]
             self.width = args[1]
-            self.length = args[2]
+            self.height = args[2]
             self.x = args[3]
             self.y = args[4]
         except IndexError:
@@ -85,7 +100,7 @@ class Rectangle(Base):
     def __str__(self):
         """The str() output"""
         form = "[Rectangle] ({}) {}/{} - {}/{}"
-        return form.format(self.id, self.x, self.y, self.width, self.length)
+        return form.format(self.id, self.x, self.y, self.width, self.height)
 
     @staticmethod
     def check_attribute(name, value):
@@ -121,7 +136,7 @@ class Rectangle(Base):
             nonlocal name
             nonlocal value
 
-            if name in ["width", "length"] and value < 1:
+            if name in ["width", "height"] and value < 1:
                 raise ValueError(f"{name} must be > 0")
             elif name in ["x", "y"] and value < 0:
                 raise ValueError(f"{name} must be >= 0")
