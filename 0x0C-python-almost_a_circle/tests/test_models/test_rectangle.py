@@ -12,9 +12,11 @@ class Test_Rectangle(unittest.TestCase):
     """test Rectanlge class from rectangle module"""
 
     def setUp(self):
+        """Set up"""
         pass
 
     def tearDown(self):
+        """Tear down"""
         Base._Base__nb_objects = 0
 
     def test_inheretence(self):
@@ -22,6 +24,7 @@ class Test_Rectangle(unittest.TestCase):
         self.assertTrue(isinstance(Rectangle(3, 4), Base))
 
     def test_normal_case(self):
+        """normal cases"""
         r1 = Rectangle(2, 3)
         r2 = Rectangle(2, 5, 10, 20, 4)
 
@@ -38,6 +41,7 @@ class Test_Rectangle(unittest.TestCase):
         self.assertEqual(r2.y, 20)
 
     def test_init_attrs_type_errors(self):
+        """test_init_attrs_type_errors"""
         message = "{} must be an integer"
 
         with self.assertRaises(TypeError, msg=message.format("width")):
@@ -50,6 +54,7 @@ class Test_Rectangle(unittest.TestCase):
             Rectangle(1, 1, 1, "not int")
 
     def test_setters_attrs_type_errors(self):
+        """test_setters_attrs_type_errors"""
         r1 = Rectangle(1, 1)
         message = "{} must be an integer"
 
@@ -63,6 +68,7 @@ class Test_Rectangle(unittest.TestCase):
             r1.y = "not int"
 
     def test_init_values_errors(self):
+        """test_init_values_errors"""
         message = "{} must be {} 0"
 
         # In inintualization
@@ -76,6 +82,7 @@ class Test_Rectangle(unittest.TestCase):
             Rectangle(1, 1, 1, -1)
 
     def test_setters_values_errors(self):
+        """test_setters_values_errors"""
         message = "{} must be {} 0"
         r1 = Rectangle(1, 1)
         with self.assertRaises(ValueError, msg=message.format("width", ">")):
@@ -88,6 +95,7 @@ class Test_Rectangle(unittest.TestCase):
             r1.y = -1
 
     def test_private_attrs(self):
+        """test_private_attrs"""
         with self.assertRaises(AttributeError):
             Rectangle(4, 5).__width
         with self.assertRaises(AttributeError):
@@ -98,22 +106,23 @@ class Test_Rectangle(unittest.TestCase):
             Rectangle(4, 5).__y
 
     def test_area(self):
+        """test_area"""
         self.assertEqual(Rectangle(1, 1).area(), 1)
         self.assertEqual(Rectangle(4, 5).area(), 20)
 
-    def test_display(self):
-        with patch('builtins.print') as mock_print:
-            Rectangle(1, 1).display()
+    # def test_display(self):
+    #     with patch('builtins.print') as mock_print:
+    #         Rectangle(1, 1).display()
 
-            output = mock_print.mock_calls[0][1][0]
-            self.assertEqual(output, '#')
+    #         output = mock_print.mock_calls[0][1][0]
+    #         self.assertEqual(output, '#')
 
-        with patch('builtins.print') as mock_print:
-            Rectangle(2, 3).display()
+    #     with patch('builtins.print') as mock_print:
+    #         Rectangle(2, 3).display()
 
-            for i in range(3):
-                output = mock_print.mock_calls[i][1][0]
-                self.assertEqual(output, '##')
+    #         for i in range(3):
+    #             output = mock_print.mock_calls[i][1][0]
+    #             self.assertEqual(output, '##')
 
     def test_str(self):
         """Test the output of __str__"""
@@ -122,3 +131,64 @@ class Test_Rectangle(unittest.TestCase):
 
         r2 = Rectangle(5, 5, 1)
         self.assertEqual(r2.__str__(), "[Rectangle] (1) 1/0 - 5/5")
+
+    def test_constructor_no_args(self):
+        '''Tests constructor signature.'''
+        with self.assertRaises(TypeError) as e:
+            r = Rectangle()
+        s = "Rectangle.__init__() missing 2 required"\
+            " positional arguments: 'width' and 'length'"
+        self.assertEqual(str(e.exception), s)
+
+    def test_constructor_many_args(self):
+        '''Tests constructor signature.'''
+        with self.assertRaises(TypeError) as e:
+            r = Rectangle(1, 2, 3, 4, 5, 6)
+        s = "Rectangle.__init__() takes from 3 to 6 positional "\
+            "arguments but 7 were given"
+        self.assertEqual(str(e.exception), s)
+
+    def test_constructor_one_args(self):
+        '''Tests constructor signature.'''
+        with self.assertRaises(TypeError) as e:
+            r = Rectangle(1)
+        s = "Rectangle.__init__() missing 1 required "\
+            "positional argument: 'length'"
+        self.assertEqual(str(e.exception), s)
+
+    def test_display_with_x_and_y(self):
+        """test_display_with_x_and_y"""
+        with patch('builtins.print') as mock_print:
+            Rectangle(1, 1, 3, 4).display()
+
+            output = mock_print.mock_calls[0][1][0]
+            self.assertEqual(output, '\n'*4)
+
+            output = mock_print.mock_calls[1][1][0]
+            self.assertEqual(output, (3*' ')+'#')
+
+        with patch('builtins.print') as mock_print:
+            Rectangle(2, 3, 2, 2).display()
+
+            output = mock_print.mock_calls[0][1][0]
+            self.assertEqual(output, 2*'\n')
+
+            for i in range(1, 4):
+                output = mock_print.mock_calls[i][1][0]
+                self.assertEqual(output, (2*' ')+'##')
+
+        with patch('builtins.print') as mock_print:
+            Rectangle(2, 3, 0, 0).display()
+
+            output = mock_print.mock_calls[0][1][0]
+            self.assertEqual(output, 0*'\n')
+
+            for i in range(1, 4):
+                output = mock_print.mock_calls[i][1][0]
+                self.assertEqual(output, (0*' ')+'##')
+
+
+    def test_A_class(self):
+        '''Tests Rectangle class type.'''
+        self.assertEqual(str(Rectangle),
+                        "<class 'models.rectangle.Rectangle'>")

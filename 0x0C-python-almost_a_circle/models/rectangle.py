@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Rectangle class"""
 
 
 from models.base import Base
@@ -60,10 +61,12 @@ class Rectangle(Base):
 
     def display(self):
         """Print the rectangle"""
+        print(self.y*'\n', end='')
         for x in range(self.length):
-            print('#'*self.width)
+            print((self.x*' ')+'#'*self.width)
 
     def __str__(self):
+        """The str() output"""
         form = "[Rectangle] ({}) {}/{} - {}/{}"
         return form.format(self.id, self.x, self.y, self.width, self.length)
 
