@@ -98,6 +98,11 @@ class Rectangle(Base):
         except IndexError:
             pass
 
+    def to_dictionary(self):
+        """Return a dictionary or attirbutes and values of object"""
+        id, w, h, x, y = self.id, self.width, self.height, self.x, self.y
+        return {'id': id, 'width': w, 'height': h, 'x': x, 'y': y}
+
     def __str__(self):
         """The str() output"""
         form = "[Rectangle] ({}) {}/{} - {}/{}"
