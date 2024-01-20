@@ -102,4 +102,17 @@ class Test_square(unittest.TestCase):
         s1.update(id=50, size=3, x=4, y=5)
         self.assertEqual(str(s1), "[Square] (50) 4/5 - 3")
 
+    def test_has_to_dictionary(self):
+        """test if it has a function called to_dictionary"""
+        self.assertTrue(hasattr(Square, "to_dictionary"))
 
+    def test_dict_type(self):
+        """test if to_dictionary returns a dict"""
+        self.assertIsInstance(Square(1).to_dictionary(), dict)
+
+    def test_to_dictionary(self):
+        """test dictionary representation of an instance"""
+        r1 = Square(4)
+        dict_form = {"id": 1, "size": 4, "x": 0, "y": 0}
+        r1_dict = r1.to_dictionary()
+        self.assertEqual(r1_dict, dict_form)

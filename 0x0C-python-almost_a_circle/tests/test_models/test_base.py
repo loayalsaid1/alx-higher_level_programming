@@ -4,6 +4,8 @@
 
 import unittest
 from models.base import Base
+from models.rectangle import Rectangle
+from json import loads, dumps
 
 
 class Test_Base(unittest.TestCase):
@@ -24,3 +26,7 @@ class Test_Base(unittest.TestCase):
         self.assertEqual(b1.id, 1)
         self.assertEqual(b2.id, 2)
         self.assertEqual(b3.id, 30)
+
+    def test_to_json(self):
+        """test Json repreesntation of multible objects"""
+        pass

@@ -21,11 +21,6 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
-    def __str__(self):
-        """Overwrite the __str__ function in Rectangle"""
-        msg = "[Square] ({}) {}/{} - {}"
-        return msg.format(self.id, self.x, self.y, self.size)
-
     def update(self, *args, **kwargs):
         """Update objet attributes as follows
             1st: id
@@ -49,3 +44,13 @@ class Square(Rectangle):
             for key in keys:
                 if key in kwargs:
                     setattr(self, key, kwargs[key])
+
+    def to_dictionary(self):
+        """Return a dictionary or all attributes of an object"""
+        id, s, x, y = self.id, self.size, self.x, self.y
+        return {'id': id, 'size': s, 'x': x, 'y': y}
+
+    def __str__(self):
+        """Overwrite the __str__ function in Rectangle"""
+        msg = "[Square] ({}) {}/{} - {}"
+        return msg.format(self.id, self.x, self.y, self.size)
