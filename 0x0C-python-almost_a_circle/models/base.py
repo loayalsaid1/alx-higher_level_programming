@@ -2,6 +2,9 @@
 """Defind a base class"""
 
 
+import json
+
+
 class Base:
     """Base class for all the upcomming classes
         It's rule is manages IDs of instances
@@ -19,3 +22,21 @@ class Base:
             self.id = Base.__nb_objects
         else:
             self.id = id
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """Get the json representation of objects
+
+            Args:
+                list_dictionaries: A list of dictionaries of instaceattributes
+
+            Return: A list of json strings
+        """
+        if not list_dictionaries or len(list_dictionaries) == 0:
+            return "[]"
+
+        result = []
+        for object in list_dictionaries:
+            result += json.dumps(object)
+
+        return str(result)
