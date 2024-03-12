@@ -1,4 +1,4 @@
-const  argv  = require('node:process').argv;
+const argv = require('node:process').argv;
 
 // print process.argv
 argv.forEach((val, index) => {
