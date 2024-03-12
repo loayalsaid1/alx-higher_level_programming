@@ -1,6 +1,4 @@
-const argv = require('node:process').argv;
-
-// print process.argv
-argv.forEach((val, index) => {
-  console.log(`${index}: ${val}`);
-});
+#!/usr/bin/node
+myVar = 89;
+require('./100-let_me_const')
+console.log(myVar);
