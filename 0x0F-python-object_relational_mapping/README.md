@@ -7,4 +7,5 @@ syntax
 - Get all states
     - Use MySQLdb to get the states from a database
 
-
+- Filter states
+    - Like previous one, but filter states starting with N
