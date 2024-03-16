@@ -12,4 +12,8 @@ syntax
     - Get states with nam ematching user input
 - 3.SQL Injection...
     - Same as before but safe parameterizing
+- 4.Cities by states
+    - Query all the cities in the database with their states
+- 5. All cities by state
+    - Query all the cites in a certain state determined by user
 
