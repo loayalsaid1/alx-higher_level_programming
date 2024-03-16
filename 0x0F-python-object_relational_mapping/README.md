@@ -4,8 +4,10 @@ Into to the world of ORMs and the abstactoin of databases using the language
 syntax
 
 ## Tasks
-- Get all states
+- 0.Get all states
     - Use MySQLdb to get the states from a database
-
-- Filter states
+- 1.Filter states
     - Like previous one, but filter states starting with N
+- 2.Filter states by user input
+    - Get states with nam ematching user input
+
