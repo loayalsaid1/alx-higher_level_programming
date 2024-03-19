@@ -24,3 +24,5 @@ syntax
     - Print all the states in the database
 - 8. First state
     - Display the first record in the "states" table
+- 9. Contains 'a'
+    - Display all the states has 'A' letter in it
