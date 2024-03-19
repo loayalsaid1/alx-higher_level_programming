@@ -22,3 +22,5 @@ syntax
     - Create a model State, connecting to a database table "states"
 - 7. All states via SQLAlchemy
     - Print all the states in the database
+- 8. First state
+    - Display the first record in the "states" table
