@@ -26,3 +26,9 @@ syntax
     - Display the first record in the "states" table
 - 9. Contains 'a'
     - Display all the states has 'A' letter in it
+- 10. Get a state
+    - Get the state object with name choosen by the user
+- 11. Add a new state
+    - Add a new state record
+    - Display the new state ID after being added to the database
+
