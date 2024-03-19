@@ -13,7 +13,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state = session.query(State).get(2)
+    # query(State).get(2) will do it, but This is just for compatablilty
+    state = session.query(State).filter_by(id=2).one()
     state.name = "New Mexico"
     session.add(state)
     session.commit()
