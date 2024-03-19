@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Query All the cities in the database, printing the city and it's state"""
+"""Query All the cities in a state provided by the user"""
 
 
 if __name__ == "__main__":
