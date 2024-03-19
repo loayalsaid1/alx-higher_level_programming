@@ -31,4 +31,8 @@ syntax
 - 11. Add a new state
     - Add a new state record
     - Display the new state ID after being added to the database
+- 12.Update a state
+    - Change the name of the record in a database
+- 13. Delete states
+    - Delete records from the database based on a certain conditoin
 
