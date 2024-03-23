@@ -19,3 +19,4 @@ if __name__ == "__main__":
 
     for row in result:
         print(f"{row[0]}: ({row[1]}) {row[2]}")
+    x = session.query(State).all()
