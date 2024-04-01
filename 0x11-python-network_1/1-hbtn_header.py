@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""Get the header of a url request responser"""
+"""
+    Get the header of a url request responser
+    Make sinse, right? :)
+    """
 from urllib.request import urlopen
 from sys import argv
 
