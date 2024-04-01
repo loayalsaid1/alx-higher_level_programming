@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""Get a header variable from the headervalues return by the server
-after making a request
-"""
+"""Get the header of a url request responser"""
 from urllib.request import urlopen
 from sys import argv
 
