@@ -2,10 +2,11 @@
 """
     Get the header of a url request responser
     Make sinse, right? :)
-    """
-from urllib.request import urlopen
-from sys import argv
+"""
+import urllib.request
+import sys
 
-
-with urlopen(argv[1]) as response:
-    print(response.headers['X-Request-Id'])
+if __name__ == "__main__":
+    url = sys.argv[1]
+    with urllib.request.urlopen(url) as response:
+        print(response.headers["X-Request-Id"])
