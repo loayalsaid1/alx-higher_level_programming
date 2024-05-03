@@ -36,3 +36,18 @@ class Base:
             return "[]"
 
         return json.dumps(list_dictionaries)
+
+    @staticmethod
+    def save_to_file(cls, list_objs):
+        """Save the json represetation of the instances <list_objs> to a
+        file of format: <cls>.json
+        
+            Args:
+                cls: The class name of the instaces
+                list_objs: The list of instances
+        """
+        with open(f"{cls}.json", "w") as f:
+            if list_obj is not None:
+                
+                
+            

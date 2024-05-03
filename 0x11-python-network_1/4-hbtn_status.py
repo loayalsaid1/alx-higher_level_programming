@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Fetch a url vie the urllib package"""
+"""Fetch a url vie the requests package"""
 import requests
 
 
