@@ -7,12 +7,17 @@ const url = `https://swapi-api.alx-tools.com/api/films/${filmId}`;
 
 let characters = [];
 
+const names = [];
+
 async function printNamesInOrder (characters) {
   for (const character of characters) {
     let person = await fetch(character);
     person = await person.json();
 
-    console.log(person.name);
+    names.push(person.name);
+  }
+  for (const name of names) {
+    console.log(name);
   }
 }
 
